@@ -1,9 +1,27 @@
 <h1>ランニング記録一覧</h1>
 
-<ul>
-    <% @runs.each do |run| %>
-      <li><%= run.date %> &emsp;<%= link_to run.name, run %> &emsp; <%= run.distance %>km</li>
-    <% end %>
-</ul>
+<% if @runs.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>日付</th>
+        <th>名前</th>
+        <th>走った距離(km)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @runs.each do |run| %>
+        <tr>
+          <td><%= run.date %></td>
+          <td><%= link_to run.name, run %></td>
+          <td><%= run.distance %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @runs %>
+  </div>
+<% end %>
 
-<%= link_to '新しいランニングの記録', new_run_path %>
+<%= link_to '新しいランニングの記録', new_run_path, class: "btn btn-primary" %>

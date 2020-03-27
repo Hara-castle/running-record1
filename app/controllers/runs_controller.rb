@@ -1,6 +1,6 @@
 class RunsController < ApplicationController
   def index
-      @runs = Run.all
+      @runs = Run.order(date: :desc).page(params[:page]).per(10)
   end
 
   def show

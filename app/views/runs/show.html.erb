@@ -1,7 +1,19 @@
-<h1><%= @run.name %>のランニング記録詳細</h1>
+<h1><%= @run.date %> : <%= @run.name %> のランニング記録の詳細</h1>
 
-<p><%= @run.date %> &emsp; <%= @run.distance %>km</p>
+<table class="table table-bordered">
+  <tr>
+    <th>日付</th>
+    <td><%= @run.date %></td>
+  </tr>
+  <tr>
+    <th>名前</th>
+    <td><%= @run.name %></td>
+  </tr>
+  <tr>
+    <th>走った距離(km)</th>
+    <td><%= @run.distance %></td>
+  </tr>
+</table>
 
-<%= link_to '一覧に戻る', runs_path %>
-<%= link_to 'このランニング記録を編集する', edit_run_path(@run) %>
-<%= link_to 'このランニング記録を削除する', @run, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+<%= link_to 'このランニング記録を編集する', edit_run_path(@run), class: 'btn btn-light' %>
+<%= link_to 'このランニング記録を削除する', @run, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
