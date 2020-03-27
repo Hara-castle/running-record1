@@ -1,0 +1,9 @@
+<h1>ランニング記録一覧</h1>
+
+<ul>
+    <% @runs.each do |run| %>
+      <li><%= run.date %> &emsp;<%= link_to run.name, run %> &emsp; <%= run.distance %>km</li>
+    <% end %>
+</ul>
+
+<%= link_to '新しいランニングの記録', new_run_path %>

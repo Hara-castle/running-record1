@@ -1,0 +1,7 @@
+<h1><%= @run.name %>のランニング記録詳細</h1>
+
+<p><%= @run.date %> &emsp; <%= @run.distance %>km</p>
+
+<%= link_to '一覧に戻る', runs_path %>
+<%= link_to 'このランニング記録を編集する', edit_run_path(@run) %>
+<%= link_to 'このランニング記録を削除する', @run, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
