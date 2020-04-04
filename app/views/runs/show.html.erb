@@ -17,3 +17,4 @@
 
 <%= link_to 'このランニング記録を編集する', edit_run_path(@run), class: 'btn btn-light' %>
 <%= link_to 'このランニング記録を削除する', @run, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>
+<%= link_to '一覧に戻る', runs_path, class: 'btn btn-secondary' %>
