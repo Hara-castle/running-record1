@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'toppages/index'
-  root to: 'runs#index'
+  #root to: 'runs#index' 下に変えた
+  root to: 'toppages#index'
   
   resources :runs
   
