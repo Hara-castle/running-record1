@@ -1,4 +1,6 @@
 class RunsController < ApplicationController
+  before_action :require_user_logged_in, only: [:index, :show, :update]
+  
   def index
       @runs = Run.order(date: :desc).page(params[:page]).per(10)
   end
